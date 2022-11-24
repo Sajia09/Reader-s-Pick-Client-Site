@@ -10,7 +10,7 @@ const Advertise = () => {
                 <div>
                     <img style={{height:'350px',width:'350px'}} src="https://www.nicepng.com/png/full/332-3326346_book-cover-design-contests-book-cover-design.png" alt=" random imgee" className=" rounded-lg shadow-md"/>
 
-                        <div className="relative px-4 -mt-16  ">
+                        <div className="relative px-4 -mt-16">
                             <div className="bg-white p-6 rounded-lg shadow-lg">
                                 <div className="flex items-baseline">
                                     <span className="btn-xs btn btn-primary  uppercase font-semibold tracking-wide">
