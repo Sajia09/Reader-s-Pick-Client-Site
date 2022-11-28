@@ -7,6 +7,8 @@ import Home from "../Pages/Home/Home";
 import BooksCollection from "../Pages/BooksCollection/BooksCollection";
 import CategoryLayout from "../Layout/CategoryLayout";
 import CategoryBookCollection from "../Pages/BooksCollection/CategoryBookCollection";
+import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path:'/login',
                 element:<Login></Login>
+            },
+            {
+                path:'/signup',
+                element:<SignUp></SignUp>
             }
         ]
     },
@@ -37,7 +43,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/category/:name',
-                element:<CategoryBookCollection></CategoryBookCollection>,
+                element:<PrivateRoute><CategoryBookCollection></CategoryBookCollection></PrivateRoute>,
                 loader:({params})=> fetch(`http://localhost:5000/category/${params.name}`)
             },
 
