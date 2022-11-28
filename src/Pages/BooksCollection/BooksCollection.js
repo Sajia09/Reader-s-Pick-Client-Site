@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Loading from '../Shared/Loading/Loading';
 import BookCard from './BookCard';
 
 const BooksCollection = () => {
     const url = 'http://localhost:5000/allbooks';
-    const {data: allBooks=[]} = useQuery({
+    const {data: allBooks=[],isLoading} = useQuery({
         queryKey:['allbooks'],
         queryFn: async () => {
             const res = await fetch(url);
@@ -13,6 +14,9 @@ const BooksCollection = () => {
             return data;
         }
     })
+    if(isLoading){
+        return <Loading></Loading>
+    }
     return (
         <div>
             <h2 className="text-4xl font-bold mt-5">Choose Your Favorite Books</h2>

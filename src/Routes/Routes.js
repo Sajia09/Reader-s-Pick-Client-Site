@@ -9,6 +9,7 @@ import CategoryLayout from "../Layout/CategoryLayout";
 import CategoryBookCollection from "../Pages/BooksCollection/CategoryBookCollection";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import DashboardLayout from "../Layout/DashboardLayout";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +48,15 @@ const router = createBrowserRouter([
                 loader:({params})=> fetch(`http://localhost:5000/category/${params.name}`)
             },
 
+        ]
+    },
+    {
+        path:'/dashboard',
+        element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children:[
+            {
+
+            }
         ]
     }
 ])
