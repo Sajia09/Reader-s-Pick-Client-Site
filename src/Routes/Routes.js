@@ -10,6 +10,9 @@ import CategoryBookCollection from "../Pages/BooksCollection/CategoryBookCollect
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../Layout/DashboardLayout";
+import AdminRoute from "./AdminRoute";
+import AllBuyers from "../Pages/Dashboard/AllUsers/AllBuyers";
+import Allseller from "../Pages/Dashboard/AllUsers/Allseller";
 
 const router = createBrowserRouter([
     {
@@ -55,8 +58,13 @@ const router = createBrowserRouter([
         element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children:[
             {
-
-            }
+                path:'dashboard/allbuyers',
+                element:<AllBuyers></AllBuyers>
+            },
+            {
+                path:'dashboard/allsellers',
+                element:<Allseller></Allseller>
+            },
         ]
     }
 ])

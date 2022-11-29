@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
-import img1 from '../../images/Reset password-amico.png';
+import img2 from '../../images/Enter OTP-bro.png';
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -52,7 +52,7 @@ const SignUp = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse justify-around">
-                <img style={{ width: '40%' }} src={img1} alt="" />
+                <img style={{ width: '40%' }} src={img2} alt="" />
                 <div className="card w-full  max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <form onSubmit={handleSubmit(handleSignUp)}>

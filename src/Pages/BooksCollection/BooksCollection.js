@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import BookingModal from '../Dashboard/BookingModal';
 import Loading from '../Shared/Loading/Loading';
 import BookCard from './BookCard';
 
