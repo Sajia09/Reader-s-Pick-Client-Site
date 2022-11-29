@@ -13,6 +13,8 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import AdminRoute from "./AdminRoute";
 import AllBuyers from "../Pages/Dashboard/AllUsers/AllBuyers";
 import Allseller from "../Pages/Dashboard/AllUsers/Allseller";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -58,14 +60,22 @@ const router = createBrowserRouter([
         element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children:[
             {
+                path:'/dashboard',
+                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
                 path:'dashboard/allbuyers',
-                element:<AllBuyers></AllBuyers>
+                element:<AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             },
             {
                 path:'dashboard/allsellers',
-                element:<Allseller></Allseller>
+                element:<AdminRoute><Allseller></Allseller></AdminRoute>
             },
         ]
+    },
+    {
+        path:'*',
+        element:<ErrorPage></ErrorPage>
     }
 ])
 
