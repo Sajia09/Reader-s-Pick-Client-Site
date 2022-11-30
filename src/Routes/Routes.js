@@ -16,6 +16,7 @@ import Allseller from "../Pages/Dashboard/AllUsers/Allseller";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
 
 
 const router = createBrowserRouter([
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
             {
                 path:'dashboard/myproducts',
                 element:<MyProducts></MyProducts>
+            },
+            {
+                path:'/dashboard/myorders',
+                element:<MyOrders></MyOrders>
             }
         ]
     },
