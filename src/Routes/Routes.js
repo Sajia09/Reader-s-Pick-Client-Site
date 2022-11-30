@@ -15,6 +15,9 @@ import AllBuyers from "../Pages/Dashboard/AllUsers/AllBuyers";
 import Allseller from "../Pages/Dashboard/AllUsers/Allseller";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import SellerRoute from "./SellerRoute";
+import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+import SellerDashboardLayout from "../Layout/SellerDashboardLayout";
 
 const router = createBrowserRouter([
     {
@@ -71,6 +74,16 @@ const router = createBrowserRouter([
                 path:'dashboard/allsellers',
                 element:<AdminRoute><Allseller></Allseller></AdminRoute>
             },
+        ]
+    },
+    {
+        path:'/sellerdashboard',
+        element:<PrivateRoute><SellerDashboardLayout></SellerDashboardLayout></PrivateRoute>,
+        children:[
+            {
+                path:'sellerdashboard/myproducts',
+                element:<SellerRoute><MyProducts></MyProducts></SellerRoute>
+            }
         ]
     },
     {

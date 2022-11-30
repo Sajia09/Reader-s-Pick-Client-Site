@@ -87,7 +87,6 @@ const SignUp = () => {
                             </div>
                             <div className="form-control mt-5">
                                 <select {...register("role")} className="select select-bordered w-full max-w-xs">
-                                    <option disabled selected>Sign Up As</option>
                                     <option value='buyer'>Buyer</option>
                                     <option value='seller'>Seller</option>
                                 </select>

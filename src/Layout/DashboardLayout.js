@@ -7,7 +7,8 @@ import Navbar from '../Pages/Shared/Navbar/Navbar';
 
 const DashboardLayout = () => {
     const { user } = useContext(AuthContext);
-    const [isAdmin] = useAdmin(user?.email)
+    const [isAdmin] = useAdmin(user?.email);
+    
     return (
         <div>
             <Navbar></Navbar>
@@ -19,14 +20,14 @@ const DashboardLayout = () => {
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 text-primary font-bold">
-                        <li><Link to="/dashboard">All Users</Link></li>
+                        
                         {
                             isAdmin && <>
                                 <li><Link to="dashboard/allsellers">All Sellers</Link></li>
                                 <li><Link to="dashboard/allbuyers">All Buyers</Link></li>
+                                <li><Link to="/dashboard">All Users</Link></li>
                             </>
                         }
-
                     </ul>
                 </div>
             </div>

@@ -14,10 +14,12 @@ const Navbar = () => {
     <>
     <li><Link to='/'>Home</Link></li>
     
-    {user?.uid ?
+    { user?.uid?
             <>
                 <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><Link to='/category'>Category</Link></li>
+                <li><Link to='/sellerdashboard'>Seller Dashboard</Link></li>
+                
             </>
             : <li><Link to='/blog'>Blog</Link></li>}
     </>

@@ -5,10 +5,10 @@ import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal'
 import Loading from '../../Shared/Loading/Loading';
 
 const Allseller = () => {
-    const [deletingBuyer, setDeletingBuyer] = useState();
+    const [deletingSeller, setDeletingSeller] = useState();
 
     const closeModal = () => {
-        setDeletingBuyer(null);
+        setDeletingSeller(null);
     }
     
     const { data: users, isLoading, refetch } = useQuery({
@@ -29,8 +29,8 @@ const Allseller = () => {
         }
     });
 
-    const handleDeleteBuyer = buyer => {
-        fetch(`http://localhost:5000/users/seller/${buyer._id}`, {
+    const handleDeleteSeller = Seller => {
+        fetch(`http://localhost:5000/users/seller/${Seller._id}`, {
             method: 'DELETE', 
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -40,7 +40,7 @@ const Allseller = () => {
         .then(data => {
             if(data.deletedCount > 0){
                 refetch();
-                toast.success(`Buyer ${buyer.name} deleted successfully`)
+                toast.success(`Seller ${Seller.name} deleted successfully`)
             }
         })
     }
@@ -67,7 +67,7 @@ const Allseller = () => {
                                 <th>{i + 1}</th>
                                 <td>{user?.name}</td>
                                 <td>{user?.email}</td>
-                                <td><label onClick={() => setDeletingBuyer(user)} htmlFor="confirmation-modal" className='btn btn-secondary btn-xs'>Delete</label></td>
+                                <td><label onClick={() => setDeletingSeller(user)} htmlFor="confirmation-modal" className='btn btn-secondary btn-xs'>Delete</label></td>
                             </tr>)
                         }
 
@@ -75,12 +75,12 @@ const Allseller = () => {
                 </table>
             </div>
             {
-                deletingBuyer && <ConfirmationModal
+                deletingSeller && <ConfirmationModal
                     title={`Are you sure you want to delete?`}
-                    message={`If you delete ${deletingBuyer.name}. It cannot be undone.`}
-                    successAction = {handleDeleteBuyer}
+                    message={`If you delete ${deletingSeller.name}. It cannot be undone.`}
+                    successAction = {handleDeleteSeller}
                     successButtonName="Delete"
-                    modalData = {deletingBuyer}
+                    modalData = {deletingSeller}
                     closeModal = {closeModal}
                 >
                 </ConfirmationModal>
