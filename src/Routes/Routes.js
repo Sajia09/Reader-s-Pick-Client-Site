@@ -17,6 +17,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
 import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
+import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
 
 
 const router = createBrowserRouter([
@@ -82,7 +83,11 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/myorders',
                 element:<MyOrders></MyOrders>
-            }
+            },
+            {
+                path:'dashboard/addproduct',
+                element:<AddProduct></AddProduct>
+            },
         ]
     },
     {
