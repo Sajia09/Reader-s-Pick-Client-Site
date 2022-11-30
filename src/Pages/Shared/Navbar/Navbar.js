@@ -13,15 +13,15 @@ const Navbar = () => {
     const navItem = 
     <>
     <li><Link to='/'>Home</Link></li>
+    <li><Link to='/blog'>Blog</Link></li>
     
     { user?.uid?
             <>
                 <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><Link to='/category'>Category</Link></li>
-                <li><Link to='/sellerdashboard'>Seller Dashboard</Link></li>
                 
             </>
-            : <li><Link to='/blog'>Blog</Link></li>}
+            : <></>}
     </>
     return (
         <div className="navbar bg-base-100 sticky top-0 z-30">
