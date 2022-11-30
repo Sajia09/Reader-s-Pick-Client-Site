@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path:'/category/:name',
                 element:<PrivateRoute><CategoryBookCollection></CategoryBookCollection></PrivateRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/category/${params.name}`)
+                loader:({params})=> fetch(`https://readers-pick-server-site.vercel.app/category/${params.name}`)
             },
 
         ]
@@ -75,8 +75,9 @@ const router = createBrowserRouter([
                 element:<AdminRoute><Allseller></Allseller></AdminRoute>
             },
             {
-                path:'dashboard/myproducts',
-                element:<MyProducts></MyProducts>
+                path:'dashboard/myproducts/:seller',
+                element:<MyProducts></MyProducts>,
+                loader:({params})=> fetch(`https://readers-pick-server-site.vercel.app/myproducts/${params.seller}`)
             },
             {
                 path:'/dashboard/myorders',

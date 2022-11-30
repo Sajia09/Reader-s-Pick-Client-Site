@@ -5,7 +5,7 @@ import Footer from '../Pages/Shared/Footer/Footer';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 
 const CategoryLayout = () => {
-    const url = 'http://localhost:5000/category';
+    const url = 'https://readers-pick-server-site.vercel.app/category';
 
     const { data: categories = [] } = useQuery({
         queryKey: ['category'],

@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import BookCard from './BookCard';
 
 const BooksCollection = () => {
-    const url = 'http://localhost:5000/allbooks';
+    const url = 'https://readers-pick-server-site.vercel.app/allbooks';
     const {data: allBooks=[],isLoading} = useQuery({
         queryKey:['allbooks'],
         queryFn: async () => {

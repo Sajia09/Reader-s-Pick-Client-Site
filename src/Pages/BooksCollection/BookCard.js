@@ -22,7 +22,7 @@ const BookCard = ({ book }) => {
             phone,
             price
         }
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://readers-pick-server-site.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
